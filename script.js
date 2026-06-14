@@ -13,9 +13,9 @@ const displayHighscore = document.getElementById('displayHighscore');
 const displayMessage = document.getElementById('displayMessage');
 
 
-const updateMessage = function (messageText) {
+function updateMessage(messageText) {
   displayMessage.textContent = messageText;
-};
+}
 
 btnCheck.addEventListener('click', function () {
   const guess = Number(inputGuess.value);
@@ -26,6 +26,7 @@ btnCheck.addEventListener('click', function () {
 
   
   } else if (guess === secretNumber) {
+    
     updateMessage('🎉 Correct Number!');
     displayNumber.textContent = secretNumber; 
     
@@ -65,21 +66,20 @@ btnCheck.addEventListener('click', function () {
 
 
 btnAgain.addEventListener('click', function () {
-  
   score = 20;
   secretNumber = Math.floor(Math.random() * 20) + 1;
-
   
   updateMessage('Start guessing...');
   displayScore.textContent = score;
   displayNumber.textContent = '?';
   inputGuess.value = '';
-
   
-  document.body.style.backgroundColor = '#222';
-  displayNumber.style.width = '6rem';
-
+  
+  document.body.style.backgroundColor = 'rgb(68, 68, 68)';
+  
+  displayNumber.style.width = '130px'; 
   
   btnCheck.disabled = false;
   inputGuess.disabled = false;
 });
+
