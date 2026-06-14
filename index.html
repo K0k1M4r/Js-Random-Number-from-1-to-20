@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess My Number!</title>
 </head>
 <body>
     <header class="header">
-        <button>Again!</button>
+        
+        <button class="btn-again" id="btnAgain">Again!</button>
         <span>(Between 1 and 20)</span>
     </header>
-
     <main class="main">
-
         <section class="hero-section">
             <h1>Guess My Number!</h1>
-            <div>?</div>
+            
+            <div class="number" id="displayNumber">?</div>
         </section>
-        
         <section class="score-guessing-game">
             <div class="input-number">
-                <input type="text" name="" id="">
-                <button>check</button>
+                
+                <input type="number" class="guess" id="inputGuess" min="1" max="20">
+                
+                <button class="btn-check" id="btnCheck">Check!</button>
             </div>
-
             <div class="scores">
-                <span>Start Guessing...</span>
-                <span>score:20</span>
-                <span>Highscore:0</span>
+                
+                <span class="message" id="displayMessage">Start guessing...</span>
+                <div class="scores-div">
+                    
+                    <span>Score: <span class="score" id="displayScore">20</span></span>
+                    <span>Highscore: <span class="highscore" id="displayHighscore">0</span></span>
+                </div>
             </div>
         </section>
-        
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
